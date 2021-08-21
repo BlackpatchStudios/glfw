@@ -65,6 +65,33 @@ project "GLFW"
 			"_CRT_SECURE_NO_WARNINGS"
 		}
 
+	filter "system:macosx"
+		systemversion "latest"
+
+		files
+		{
+			"src/cocoa_platform.h",
+			"src/cocoa_joystick.h",
+			"src/posix_thread.h",
+			"src/nsgl_context.h",
+			"src/egl_context.h",
+			"src/osmesa_context.h",
+			"src/cocoa_init.m",
+			"src/cocoa_joystick.m",
+			"src/cocoa_monitor.m",
+			"src/cocoa_window.m ",
+			"src/cocoa_time.c",
+			"src/posix_thread.c",
+			"src/nsgl_context.m",
+			"src/egl_context.c",
+			"src/osmesa_context.c"
+		}
+
+		defines 
+		{ 
+			"_GLFW_COCOA",
+		}
+
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
